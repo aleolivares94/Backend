@@ -1,8 +1,16 @@
 const { promises: fs } = require("fs");
 
 class Contenedor {
-  constructor({ ruta }) {
+  constructor(ruta) {
     this.ruta = ruta;
+  }
+
+  async getContendor() {
+    try {
+      JSON.parse(await fs.promises.readFile(this.ruta));
+    } catch (error) {
+      throw error;
+    }
   }
 
   //Recibe un objeto, lo guarda en el archivo, devuelve el id asignado

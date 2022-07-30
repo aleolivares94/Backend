@@ -1,4 +1,5 @@
 const { promises: fs } = require("fs");
+const Contenedor = require("./Contenedor");
 
 const productos = [
   {
